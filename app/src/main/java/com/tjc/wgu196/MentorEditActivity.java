@@ -1,27 +1,21 @@
 package com.tjc.wgu196;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.tjc.wgu196.utilities.TextFormatting;
 import com.tjc.wgu196.viewmodels.EditorViewModel;
 
-import java.text.ParseException;
-import java.util.Date;
 import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 import static com.tjc.wgu196.utilities.Constants.COURSE_ID_KEY;
 import static com.tjc.wgu196.utilities.Constants.EDITING_KEY;

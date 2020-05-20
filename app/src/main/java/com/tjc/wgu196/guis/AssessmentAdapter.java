@@ -17,7 +17,7 @@ import com.tjc.wgu196.AssessmentDetailsActivity;
 import com.tjc.wgu196.AssessmentEditActivity;
 import com.tjc.wgu196.R;
 import com.tjc.wgu196.models.Assessment;
-import com.tjc.wgu196.utilities.TextFormatting;
+import com.tjc.wgu196.utilities.TextFormats;
 
 import java.util.List;
 
@@ -52,7 +52,7 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.Vi
     public void onBindViewHolder(@NonNull AssessmentAdapter.ViewHolder holder, int position) {
         final Assessment assessment = mAssessments.get(position);
         holder.tvTitle.setText(assessment.getTitle());
-        holder.tvDate.setText(TextFormatting.cardDateFormat.format(assessment.getDate()));
+        holder.tvDate.setText(TextFormats.cardDateFormat.format(assessment.getDate()));
 
         switch(rContext) {
             case MAIN:

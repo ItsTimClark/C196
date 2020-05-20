@@ -15,7 +15,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.tjc.wgu196.models.AssessmentType;
-import com.tjc.wgu196.utilities.TextFormatting;
+import com.tjc.wgu196.utilities.TextFormats;
 import com.tjc.wgu196.viewmodels.EditorViewModel;
 
 import java.text.ParseException;
@@ -81,7 +81,7 @@ public class AssessmentEditActivity extends AppCompatActivity {
         mViewModel.mLiveAssessment.observe(this, assessment -> {
             if(assessment != null && !mEditing) {
                 tvAssessmentTitle.setText(assessment.getTitle());
-                tvAssessmentDate.setText(TextFormatting.fullDateFormat.format(assessment.getDate()));
+                tvAssessmentDate.setText(TextFormats.fullDateFormat.format(assessment.getDate()));
                 int position = getSpinnerPosition(assessment.getAssessmentType());
                 spAssessmentType.setSelection(position);
             }
@@ -134,7 +134,7 @@ public class AssessmentEditActivity extends AppCompatActivity {
 
     public void saveAndReturn() {
         try {
-            Date date = TextFormatting.fullDateFormat.parse(tvAssessmentDate.getText().toString());
+            Date date = TextFormats.fullDateFormat.parse(tvAssessmentDate.getText().toString());
             mViewModel.saveAssessment(tvAssessmentTitle.getText().toString(), date, getSpinnerValue(), courseId);
             Log.v("Saved Assessment", tvAssessmentTitle.toString());
         } catch (ParseException e) {
@@ -157,7 +157,7 @@ public class AssessmentEditActivity extends AppCompatActivity {
             myCalendar.set(Calendar.MONTH, monthOfYear);
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
-            tvAssessmentDate.setText(TextFormatting.fullDateFormat.format(myCalendar.getTime()));
+            tvAssessmentDate.setText(TextFormats.fullDateFormat.format(myCalendar.getTime()));
         };
         new DatePickerDialog(this, date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH)).show();
     }

@@ -14,7 +14,7 @@ import com.tjc.wgu196.models.Mentor;
 import com.tjc.wgu196.models.Term;
 import com.tjc.wgu196.guis.RecyclerContext;
 import com.tjc.wgu196.guis.TermAdapter;
-import com.tjc.wgu196.utilities.Alerting;
+import com.tjc.wgu196.utilities.Alerts;
 import com.tjc.wgu196.viewmodels.MainViewModel;
 
 import androidx.annotation.NonNull;
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(alerts.size() > 0) {
             for(String alert: alerts) {
                 AlarmManager alarm = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
-                Alerting alerting = new Alerting();
+                Alerts alerting = new Alerts();
                 IntentFilter filter = new IntentFilter("ALARM_ACTION");
                 registerReceiver(alerting, filter);
 

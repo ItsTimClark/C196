@@ -17,7 +17,7 @@ import com.tjc.wgu196.R;
 import com.tjc.wgu196.TermDetailsActivity;
 import com.tjc.wgu196.TermEditActivity;
 import com.tjc.wgu196.models.Term;
-import com.tjc.wgu196.utilities.TextFormatting;
+import com.tjc.wgu196.utilities.TextFormats;
 
 import java.util.List;
 
@@ -50,7 +50,7 @@ public class TermAdapter extends RecyclerView.Adapter<TermAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull TermAdapter.ViewHolder holder, int position) {
         final Term term = mTerms.get(position);
         holder.tvTitle.setText(term.getTitle());
-        String startAndEnd = TextFormatting.cardDateFormat.format(term.getStartDate()) + " to " + TextFormatting.cardDateFormat.format(term.getEndDate());
+        String startAndEnd = TextFormats.cardDateFormat.format(term.getStartDate()) + " to " + TextFormats.cardDateFormat.format(term.getEndDate());
         holder.tvDates.setText(startAndEnd);
 
         switch(rContext) {

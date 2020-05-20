@@ -20,7 +20,7 @@ import com.tjc.wgu196.models.Course;
 import com.tjc.wgu196.guis.CourseAdapter;
 import com.tjc.wgu196.guis.CourseDropdownMenu;
 import com.tjc.wgu196.guis.RecyclerContext;
-import com.tjc.wgu196.utilities.TextFormatting;
+import com.tjc.wgu196.utilities.TextFormats;
 import com.tjc.wgu196.viewmodels.EditorViewModel;
 
 import java.util.ArrayList;
@@ -74,8 +74,8 @@ public class TermDetailsActivity extends AppCompatActivity implements CourseAdap
         mViewModel = ViewModelProviders.of(this).get(EditorViewModel.class);
 
         mViewModel.mLiveTerm.observe(this, term -> {
-            tvTermStartDate.setText(TextFormatting.fullDateFormat.format(term.getStartDate()));
-            tvTermEndDate.setText(TextFormatting.fullDateFormat.format(term.getEndDate()));
+            tvTermStartDate.setText(TextFormats.fullDateFormat.format(term.getStartDate()));
+            tvTermEndDate.setText(TextFormats.fullDateFormat.format(term.getEndDate()));
             toolbar.setTitle(term.getTitle());
         });
 

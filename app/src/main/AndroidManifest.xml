@@ -36,7 +36,7 @@
         <activity android:name=".MentorActivity" />
         <activity android:name=".MentorDetailsActivity" />
         <activity android:name=".MentorEditActivity" />
-        <receiver android:name=".utilities.Alerting" />
+        <receiver android:name=".utilities.Alerts" />
 
     </application>
 

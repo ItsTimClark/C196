@@ -18,7 +18,7 @@ import com.tjc.wgu196.CourseDetailsActivity;
 import com.tjc.wgu196.CourseEditActivity;
 import com.tjc.wgu196.R;
 import com.tjc.wgu196.models.Course;
-import com.tjc.wgu196.utilities.TextFormatting;
+import com.tjc.wgu196.utilities.TextFormats;
 
 import java.util.List;
 
@@ -54,7 +54,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
     public void onBindViewHolder(@NonNull CourseAdapter.ViewHolder holder, int position) {
         final Course course = mCourses.get(position);
         holder.tvTitle.setText(course.getTitle());
-        String startAndEnd = TextFormatting.cardDateFormat.format(course.getStartDate()) + " to " + TextFormatting.cardDateFormat.format(course.getAnticipatedEndDate());
+        String startAndEnd = TextFormats.cardDateFormat.format(course.getStartDate()) + " to " + TextFormats.cardDateFormat.format(course.getAnticipatedEndDate());
         holder.tvDates.setText(startAndEnd);
 
         switch(rContext) {

@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.tjc.wgu196.utilities.TextFormatting;
+import com.tjc.wgu196.utilities.TextFormats;
 import com.tjc.wgu196.viewmodels.EditorViewModel;
 
 import butterknife.BindView;
@@ -44,7 +44,7 @@ public class AssessmentDetailsActivity extends AppCompatActivity {
         mViewModel = ViewModelProviders.of(this).get(EditorViewModel.class);
 
         mViewModel.mLiveAssessment.observe(this, assessment -> {
-            tvAssessmentDate.setText(TextFormatting.fullDateFormat.format(assessment.getDate()));
+            tvAssessmentDate.setText(TextFormats.fullDateFormat.format(assessment.getDate()));
             tvAssessmentType.setText(assessment.getAssessmentType().toString());
             toolbar.setTitle(assessment.getTitle());
         });

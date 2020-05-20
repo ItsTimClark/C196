@@ -16,7 +16,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.tjc.wgu196.models.Course;
-import com.tjc.wgu196.utilities.TextFormatting;
+import com.tjc.wgu196.utilities.TextFormats;
 import com.tjc.wgu196.viewmodels.EditorViewModel;
 
 import java.text.ParseException;
@@ -78,8 +78,8 @@ public class TermEditActivity extends AppCompatActivity {
         mViewModel.mLiveTerm.observe(this, term -> {
             if(term != null && !mEditing) {
                 tvTermTitle.setText(term.getTitle());
-                tvTermStartDate.setText(TextFormatting.fullDateFormat.format(term.getStartDate()));
-                tvTermEndDate.setText(TextFormatting.fullDateFormat.format(term.getEndDate()));
+                tvTermStartDate.setText(TextFormats.fullDateFormat.format(term.getStartDate()));
+                tvTermEndDate.setText(TextFormats.fullDateFormat.format(term.getEndDate()));
             }
         });
 
@@ -166,8 +166,8 @@ public class TermEditActivity extends AppCompatActivity {
 
     public void saveAndReturn() {
         try {
-            Date startDate = TextFormatting.fullDateFormat.parse(tvTermStartDate.getText().toString());
-            Date endDate = TextFormatting.fullDateFormat.parse(tvTermEndDate.getText().toString());
+            Date startDate = TextFormats.fullDateFormat.parse(tvTermStartDate.getText().toString());
+            Date endDate = TextFormats.fullDateFormat.parse(tvTermEndDate.getText().toString());
             mViewModel.saveTerm(tvTermTitle.getText().toString(), startDate, endDate);
             Log.v("Saved term",tvTermTitle.toString());
 
@@ -194,7 +194,7 @@ public class TermEditActivity extends AppCompatActivity {
             myCalendar.set(Calendar.MONTH, monthOfYear);
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
-            tvTermStartDate.setText(TextFormatting.fullDateFormat.format(myCalendar.getTime()));
+            tvTermStartDate.setText(TextFormats.fullDateFormat.format(myCalendar.getTime()));
         };
         new DatePickerDialog(this, date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH)).show();
     }
@@ -207,7 +207,7 @@ public class TermEditActivity extends AppCompatActivity {
             myCalendar.set(Calendar.MONTH, monthOfYear);
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
-            tvTermEndDate.setText(TextFormatting.fullDateFormat.format(myCalendar.getTime()));
+            tvTermEndDate.setText(TextFormats.fullDateFormat.format(myCalendar.getTime()));
         };
         new DatePickerDialog(this, date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH)).show();
     }

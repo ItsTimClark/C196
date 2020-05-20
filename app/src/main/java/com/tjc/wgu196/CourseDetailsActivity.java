@@ -23,7 +23,7 @@ import com.tjc.wgu196.guis.AssessmentDropdownMenu;
 import com.tjc.wgu196.guis.MentorAdapter;
 import com.tjc.wgu196.guis.MentorDropdownMenu;
 import com.tjc.wgu196.guis.RecyclerContext;
-import com.tjc.wgu196.utilities.TextFormatting;
+import com.tjc.wgu196.utilities.TextFormats;
 import com.tjc.wgu196.viewmodels.EditorViewModel;
 
 import java.util.ArrayList;
@@ -96,8 +96,8 @@ public class CourseDetailsActivity extends AppCompatActivity implements Assessme
         mViewModel = ViewModelProviders.of(this).get(EditorViewModel.class);
 
         mViewModel.mLiveCourse.observe(this, course -> {
-            tvCourseStartDate.setText(TextFormatting.fullDateFormat.format(course.getStartDate()));
-            tvCourseEndDate.setText(TextFormatting.fullDateFormat.format(course.getAnticipatedEndDate()));
+            tvCourseStartDate.setText(TextFormats.fullDateFormat.format(course.getStartDate()));
+            tvCourseEndDate.setText(TextFormats.fullDateFormat.format(course.getAnticipatedEndDate()));
             tvCourseStatus.setText(course.getCourseStatus().toString());
             tvCourseNote.setText(course.getNote());
             toolbar.setTitle(course.getTitle());
