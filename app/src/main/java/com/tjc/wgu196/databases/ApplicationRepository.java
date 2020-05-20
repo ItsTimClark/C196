@@ -15,25 +15,25 @@ import com.tjc.wgu196.models.Mentor;
 import com.tjc.wgu196.models.Term;
 import com.tjc.wgu196.utilities.SampleData;
 
-public class AppRepository {
-    private static AppRepository ourInstance;
+public class ApplicationRepository {
+    private static ApplicationRepository ourInstance;
     public LiveData<List<Term>> mTerms;
     public LiveData<List<Course>> mCourses;
     public LiveData<List<Assessment>> mAssessments;
     public LiveData<List<Mentor>> mMentors;
 
-    private AppDatabase mDb;
+    private ApplicationDB mDb;
     private Executor executor = Executors.newSingleThreadExecutor();
 
-    public static AppRepository getInstance(Context context) {
+    public static ApplicationRepository getInstance(Context context) {
         if(ourInstance == null) {
-            ourInstance = new AppRepository(context);
+            ourInstance = new ApplicationRepository(context);
         }
         return ourInstance;
     }
 
-    private AppRepository(Context context) {
-        mDb = AppDatabase.getInstance(context);
+    private ApplicationRepository(Context context) {
+        mDb = ApplicationDB.getInstance(context);
         mTerms = getAllTerms();
         mCourses = getAllCourses();
         mAssessments = getAllAssessments();

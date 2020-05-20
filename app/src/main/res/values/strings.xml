@@ -40,7 +40,7 @@
     <string name="term_detail_courses_label">Courses</string>
     <string name="course_details">Course Details</string>
     <string name="course_edit_btn_start">Select Date</string>
-    <string name="course_edit_end_hint">Anticipated End Date (MM/DD/YYY</string>
+    <string name="course_edit_end_hint">Anticipated End Date (MM/DD/YYYY)</string>
     <string name="course_edit_btn_end">Select Date</string>
     <string name="course_edit_status_dropdown">Course Status</string>
     <string name="new_course">New Course</string>

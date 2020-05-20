@@ -217,25 +217,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (id) {
             case R.id.nav_terms:
-                toast = Toast.makeText(this, "Terms pressed", duration);
+                toast = Toast.makeText(this, "Terms Selected", duration);
                 toast.show();
                 Intent termIntent = new Intent(this, TermActivity.class);
                 startActivity(termIntent);
                 break;
             case R.id.nav_courses:
-                toast = Toast.makeText(this, "Courses pressed", duration);
+                toast = Toast.makeText(this, "Courses Selected", duration);
                 toast.show();
                 Intent coursesIntent = new Intent(this, CourseActivity.class);
                 startActivity(coursesIntent);
                 break;
             case R.id.nav_assessments:
-                toast = Toast.makeText(this, "Assessments pressed", duration);
+                toast = Toast.makeText(this, "Assessments Selected", duration);
                 toast.show();
                 Intent AssessmentIntent = new Intent(this, AssessmentActivity.class);
                 startActivity(AssessmentIntent);
                 break;
             case R.id.nav_mentors:
-                toast = Toast.makeText(this, "Mentors pressed", duration);
+                toast = Toast.makeText(this, "Mentors Selected", duration);
                 toast.show();
                 Intent mentorsIntent = new Intent(this, MentorActivity.class);
                 startActivity(mentorsIntent);

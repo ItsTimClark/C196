@@ -8,7 +8,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.tjc.wgu196.databases.AppRepository;
+import com.tjc.wgu196.databases.ApplicationRepository;
 import com.tjc.wgu196.models.Assessment;
 import com.tjc.wgu196.models.AssessmentType;
 import com.tjc.wgu196.models.Course;
@@ -30,12 +30,12 @@ public class EditorViewModel extends AndroidViewModel {
     public LiveData<List<Course>> mCourses;
     public LiveData<List<Assessment>> mAssessments;
     public LiveData<List<Mentor>> mMentors;
-    private AppRepository mRepository;
+    private ApplicationRepository mRepository;
     private Executor executor = Executors.newSingleThreadExecutor();
 
     public EditorViewModel(@NonNull Application application) {
         super(application);
-        mRepository = AppRepository.getInstance(getApplication());
+        mRepository = ApplicationRepository.getInstance(getApplication());
         mTerms = mRepository.mTerms;
         mCourses = mRepository.mCourses;
         mAssessments = mRepository.mAssessments;
