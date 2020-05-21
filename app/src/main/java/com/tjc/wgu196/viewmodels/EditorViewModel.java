@@ -166,6 +166,10 @@ public class EditorViewModel extends AndroidViewModel {
         mRepository.deleteAssessment(mLiveAssessment.getValue());
     }
 
+    public void deleteMentor(){
+        mRepository.deleteMentor(mLiveMentor.getValue());
+    }
+
     public LiveData<List<Course>> getCoursesInTerm(int termId) {
         return (mRepository.getCoursesByTerm(termId));
     }

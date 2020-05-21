@@ -94,7 +94,7 @@ public class MentorEditActivity extends AppCompatActivity {
             saveAndReturn();
             return true;
         } else if(item.getItemId() == R.id.action_delete) {
-            mViewModel.deleteAssessment();
+            mViewModel.deleteMentor();
             finish();
         }
         return super.onOptionsItemSelected(item);
